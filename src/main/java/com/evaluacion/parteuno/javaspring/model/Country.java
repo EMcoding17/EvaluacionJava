@@ -2,10 +2,9 @@ package com.evaluacion.parteuno.javaspring.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
 /**
  * 
  * @author emma.romero
@@ -16,15 +15,16 @@ import javax.persistence.Table;
 @Table(name="country")
 public class Country {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(nullable = false, unique = true)
 	private long id_country;
 	
-	@Column(name="code")
-	private int code;
+	
+	@Column(name="code", unique = true)
+	private String code;
 	
 	@Column(name="name")
 	private String name;
-		
+
 	public long getId_country() {
 		return id_country;
 	}
@@ -33,11 +33,11 @@ public class Country {
 		this.id_country = id_country;
 	}
 
-	public int getCode() {
+	public String getCode() {
 		return code;
 	}
 
-	public void setCode(int code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
@@ -48,7 +48,7 @@ public class Country {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+		
 
 	
 }

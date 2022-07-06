@@ -35,7 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService{
             Employee employeeUpdate = employeeDb.get();
             employeeUpdate.setId_employee(0);
             employeeUpdate.setSurname(employee.getSurname());
-            employeeUpdate.setFirstName(null);
+            employeeUpdate.setFirstname(null);
             employeeRepository.save(employeeUpdate);
             return employeeUpdate;
         }else {
